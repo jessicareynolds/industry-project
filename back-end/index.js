@@ -4,7 +4,7 @@ const port = 5000 || process.env.PORT
 const productsRouter = require("./routes/products-routes")
 const storesRouter = require("./routes/stores-routes")
 const mongoose = require("mongoose")
-const mongoUrl = "mongodb://mlab2020:abc123def!@ds031617.mlab.com:31617/learningmongo"
+const mongoUrl = "mongodb+srv://admin:RURVoDxjkFsQto7A@cluster0.0apnz.mongodb.net/IndustryProject"
 
 // connects mongoose to database
 mongoose.connect(mongoUrl,{ useNewUrlParser: true, useCreateIndex: true , useUnifiedTopology: true});
