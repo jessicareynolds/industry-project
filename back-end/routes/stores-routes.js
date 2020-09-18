@@ -1,27 +1,26 @@
 const router = require("express").Router()
-const Products = require("../models/products.model")
+const Stores = require("../models/stores.model")
 
 // read route
 router.route("/").get((request, response)=> {
-    Products.find().then((products)=>{
-        response.json(products)
+    Stores.find().then((stores)=>{
+        response.json(stores)
     })
 })
 
 // create route
 router.route("/add").post((request,response)=>{
     // add new fields here
-    const SKU = request.body.SKU,
+    
     name= request.body.name,
-    price= request.body.price,
     description= request.body.description
-    const newProduct = {
-        SKU,name,price,description
+    const newStore = {
+        name,description
     } 
 
 
-    newProduct.save().then(()=>{
-        response.json("New Product Added")
+    newStore.save().then(()=>{
+        response.json("New Store Added")
     }) .catch((error)=>{
         response.status(400).json("Error " + error )
     } )
@@ -29,18 +28,17 @@ router.route("/add").post((request,response)=>{
 
 // update route
 router.route("/update/:id").post((request,response)=>{
-    Products.findById(request.params.id).then((product)=>{
+    Stores.findById(request.params.id).then((store)=>{
         //add new fields here from schema aka products.model
-        product.SKU = request.body.SKU
-        product.name = request.body.name
-        product.price = request.body.price
-        product.description = request.body.description
+        
+        store.name = request.body.name
+        store.description = request.body.description
 
 
 
 
-        product.save().then(()=> {
-            response.json("Product Updated")
+        store.save().then(()=> {
+            response.json("Store Updated")
         }).catch ((error) => {
             response.status(400).json ("Error " + error)
         })
@@ -50,8 +48,8 @@ router.route("/update/:id").post((request,response)=>{
 
 // delete route
 router.route("/:id").delete((request,response)=> {
-    Products.findById(request.params.id).then(() =>{
-        response.json("Product has been deleted")
+    Stores.findById(request.params.id).then(() =>{
+        response.json("Store has been deleted")
     }) .catch ((error) =>{
         response.status(400).json("Error " + error)
     })
