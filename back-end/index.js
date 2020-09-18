@@ -10,7 +10,7 @@ const mongoUrl = "mongodb://mlab2020:abc123def!@ds031617.mlab.com:31617/learning
 mongoose.connect(mongoUrl,{ useNewUrlParser: true, useCreateIndex: true , useUnifiedTopology: true});
 const connection = mongoose.connection;
 connection.once("open", () => {
-  console.log("Mongodb database connection established successfully");
+console.log("Mongodb database connection established successfully");
 })
 
 //set up additional  fields
@@ -19,7 +19,6 @@ app.use("/",productsRouter)
 app.use("/stores",storesRouter)
 // another way to importing a route
 app.use("/categories",require("./routes/categories-routes"))
-
 
 
 app.listen(port,()=>{
