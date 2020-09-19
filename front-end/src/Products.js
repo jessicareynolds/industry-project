@@ -25,10 +25,11 @@ class Products extends React.Component {
     };
 
     render ()  {
+        const data =this.state.respond
         return (
             <div>
                 <div>Products Place holder</div>
-                <div>{this.state.response}</div>
+              
             </div>
         )
     }
