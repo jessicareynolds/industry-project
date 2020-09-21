@@ -11,27 +11,32 @@ import Products from './Products'
 import Stores from './Stores'
 import Categories from './Categories'
 
-
 export default function App() {
   return (
     <Router>
-      <div>
+      
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="">Tee Commerce DB</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
         <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/Products">Products</Link>
           </li>
           <li>
-            <Link to="/stores">Stores</Link>
+            <Link to="/Stores">Stores</Link>
           </li>
           <li>
-            <Link to="/categories">Categories</Link>
+            <Link to="/Categories">Categories</Link>
           </li>
         </ul>
-
-        <hr />
+        </nav>
+      <hr />
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -40,7 +45,7 @@ export default function App() {
           you have multiple routes, but you want only one
           of them to render at a time*/
         }
-        <Switch>
+  <Switch>
           <Route exact path="/">
             <Home />
           </Route>
@@ -54,7 +59,7 @@ export default function App() {
             <Categories />
             </Route>
         </Switch>
-      </div>
+       </div>
     </Router>
   );
 }
