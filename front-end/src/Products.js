@@ -11,13 +11,14 @@ class Products extends React.Component {
     componentDidMount() {
         this.callApi()
         .then((response) => { 
-            this.setState({ response: response.length + ' items found' }) 
+            this.setState({ response: response.body }) 
         } )
         .catch(err => console.log(err));
     }
     
+
     callApi = async () => {
-        const response = await fetch('http://localhost:5000/');
+        const response = await fetch('http://localhost:5000/Products');
         const body = await response.json();
         if (response.status !== 200) throw Error(body.message);
         
@@ -25,7 +26,9 @@ class Products extends React.Component {
     };
 
     render ()  {
-        const data =this.state.respond
+        const data = this.state.response
+        console.log(data)
+        
         return (
             <div>
                 <div>Products Place holder</div>

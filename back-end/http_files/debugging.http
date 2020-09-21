@@ -1,0 +1,19 @@
+### PUT
+POST http://localhost:5000/add
+Content-Type: application/json
+
+{
+    "SKU": "ABC",
+    "name": "Test Product",
+    "price": 25.00,
+    "description": "It's an awesome test"
+}
+
+### GET IT
+
+GET http://localhost:5000/
+
+### DELETE THIS TEST
+
+DELETE http://localhost:5000/5f6545232e0ef11f3ddde66c
+Content-Type: application/json

@@ -15,9 +15,7 @@ router.route("/add").post((request,response)=>{
     name= request.body.name,
     price= request.body.price,
     description= request.body.description
-    const newProduct = {
-        SKU,name,price,description
-    } 
+    const newProduct = new Products({SKU, name, price, description})
 
 
     newProduct.save().then(()=>{
