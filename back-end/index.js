@@ -3,6 +3,7 @@ const app = express()
 const port = 5000 || process.env.PORT
 const productsRouter = require("./routes/products-routes")
 const storesRouter = require("./routes/stores-routes")
+const categoriesRouter = require("./routes/categories-routes")
 const mongoose = require("mongoose")
 const mongoUrl = "mongodb+srv://admin:RURVoDxjkFsQto7A@cluster0.0apnz.mongodb.net/IndustryProject"
 const cors = require("cors")
@@ -32,10 +33,9 @@ console.log("Mongodb database connection established successfully");
 //set up additional  fields
 app.use(express.json())
 app.use(cors)
-app.use("/",productsRouter)
+app.use("/Products",productsRouter)
 app.use("/Stores",storesRouter)
-// another way to importing a route
-app.use("/Categories",require("./routes/categories-routes"))
+app.use("/Categories",categoriesRouter)
 
 
 app.listen(port,()=>{
