@@ -3,7 +3,7 @@ POST http://localhost:5000/add
 Content-Type: application/json
 
 {
-    "SKU": "ABC",
+    "SKU": "ABCD",
     "name": "Test Product",
     "price": 25.00,
     "description": "It's an awesome test"
