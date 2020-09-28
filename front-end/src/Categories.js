@@ -25,8 +25,7 @@ class Categories extends React.Component {
     };
 
     render ()  {
-       /* const data = this.state.response
-        console.log(data)*/
+       
         return (
             <div>
                 <div>Categories Place holder</div>

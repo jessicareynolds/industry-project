@@ -1,58 +1,38 @@
-const router = require("express").Router()
-const Stores = require("../models/stores.model")
+const router = require('express').Router();
+const {deleteStore, updateStore, createStore, getStores} = require('../database/stores');
 
-// read route
-router.route("/").get((request, response)=> {
-    Stores.find().then((stores)=>{
-        response.json(stores)
-    })
-})
+router.get('/', async (apiRequest, apiResponse) => {
+  apiResponse.send(await getStores());
+});
 
-// create route
-router.route("/add").post((request,response)=>{
-    // add new fields here
-    
-    name= request.body.name,
-    description= request.body.description
-    const newStore = {
-        name,description
-    } 
+// we name our parameters apiRequest and apiResponse here but
+// there is no strong reason these variables could not be named `req` and `res` or `request` and `response`
+// the reason for this naming is so we are thinking about "api" tonight
+router.post('/', async (apiRequest, apiResponse) => {
+  const newStore = apiRequest.body;
+  await createStore(newStore);
+  apiResponse.send({
+    message: 'New store created.',
+    allStores: await getStores(),
+    thanks: true
+  });
+});
 
+// endpoint to delete a product
+router.delete('/:storesId', async (apiRequest, apiResponse) => {
+  await deleteStore(apiRequest.params.productId);
+  apiResponse.send({ message: 'Store deleted.' });
+});
 
-    newStore.save().then(()=>{
-        response.json("New Store Added")
-    }) .catch((error)=>{
-        response.status(400).json("Error " + error )
-    } )
-})
+// endpoint to update a product
+router.put('/:id', async (apiRequest, apiResponse) => {
+  const updatedStore = apiRequest.body;
+  console.log({ updatedStore})
+  await updateStore(apiRequest.params.id, updatedStore);
+  apiResponse.send({ message: 'Store updated.' });
+});
 
-// update route
-router.route("/update/:id").post((request,response)=>{
-    Stores.findById(request.params.id).then((store)=>{
-        //add new fields here from schema aka products.model
-        
-        store.name = request.body.name
-        store.description = request.body.description
-
-
+module.exports = router;
 
 
-        store.save().then(()=> {
-            response.json("Store Updated")
-        }).catch ((error) => {
-            response.status(400).json ("Error " + error)
-        })
-    })
-})
 
-
-// delete route
-router.route("/:id").delete((request,response)=> {
-    Stores.findById(request.params.id).then(() =>{
-        response.json("Store has been deleted")
-    }) .catch ((error) =>{
-        response.status(400).json("Error " + error)
-    })
-})
-
-module.exports = router

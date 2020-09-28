@@ -22,6 +22,8 @@ app.use(cors());
 // adding morgan to log HTTP requests
 app.use(morgan('combined'));
 
+
+
 module.exports = {
   app,
   startDatabase

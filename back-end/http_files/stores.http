@@ -1,0 +1,21 @@
+###PUT
+
+POST http://localhost:5000/stores
+Content-Type: application/json
+
+{
+    "logo": "Viking",
+    "name": "Industry Project",
+    "description": "I am lost. Send Help. Thanks!"
+}
+
+### GET IT
+
+GET http://localhost:5000/
+
+### DELETE IT
+//add specific id to the end of it 
+DELETE http://localhost:5000/
+Content-Type: application/json
+
+
