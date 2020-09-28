@@ -1,19 +1,35 @@
 ### PUT
-POST http://localhost:5000/add
+POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "SKU": "ABCD",
-    "name": "Test Product",
-    "price": 25.00,
-    "description": "It's an awesome test"
+    "SKU": "ACX.A190.Black.A1",
+    "name": "Adidas Climalite 3-Stripes French Terry Quarter Zip Pullover",
+    "price": 84.00,
+    "description": "Black"
 }
 
 ### GET IT
 
-GET http://localhost:5000/
+GET http://localhost:5000/products
+
+
+### Test the PUT which should change a product
+### id of 5f2b54de320478eb4b1603eb is temporary while server is running
+PUT http://localhost:5000/products/5f714599c8807a1b801bc424
+Content-Type: application/json
+
+{
+  "_id": "5f714599c8807a1b801bc424",
+    "SKU": "ACX.12OZWT.Black.A1",
+    "name": "12oz Wine Tumbler",
+    "price": 25,
+    "description":"These practical 12 oz wine tumblers are amazing for summer outdoor parties, or for a good read on the couch on a cozy winter day. They feature a double-wall, vacuum insulation that keeps your wine perfectly cool for hours. They are made of 18/8 gauge stainless steel (also known as Type 304 Food Grade) and are completely BPA and lead-free."
+    
+}
+
 
 ### DELETE THIS TEST
 
-DELETE http://localhost:5000/5f6545232e0ef11f3ddde66c
+DELETE http://localhost:5000/products/5f6545de2e0ef11f3ddde66d
 Content-Type: application/json

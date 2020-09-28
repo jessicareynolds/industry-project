@@ -18,8 +18,7 @@ app.use('/categories', require('./routes/categories-Routes'))
 // connect to our database
 // https://www.mongodb.com/
 startDatabase().then(async () => {
- 
-  app.listen(5000, async () => {
+ app.listen(5000, async () => {
     console.log('Web server has started on port 5000 http://localhost:5000');
   });
 });

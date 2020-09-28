@@ -1,10 +1,10 @@
 ###PUT
 
-POST http://localhost:5000/add
+POST http://localhost:5000/stores
 Content-Type: application/json
 
 {
-    "logo": "Stress",
+    "logo": "Viking",
     "name": "Industry Project",
     "description": "I am lost. Send Help. Thanks!"
 }
