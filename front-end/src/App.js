@@ -85,7 +85,7 @@ function Home() {
 <p class="card" >
   <img src ="https://tcimages.imfast.io/ACX/ACX.12OZWT.Stainless.A1.jpg" class="card-img-top" alt="new"></img>
   </p>
-    <a href="http://localhost:5000/products" class="btn btn-primary">Golf Accesories</a>
+    <a href="http://localhost:5000/products" class="btn btn-primary">Golf Accessories</a>
 
   <p class="card2" >
   <img src ="https://tcimages.imfast.io/ACX/ACX.A190.Black.A1.jpg" class="card-img-top2" alt="new"></img>
