@@ -1,35 +1,39 @@
 .App {
   text-align: center;
 }
-.Welcome{
+.Welcome {
   text-align: center;
 }
 
-.Searchbar{
+#main-nav {
+  background-color: #110a40;
+}
+
+.nav-link {
+  color: #ffffff;
+}
+
+.Searchbar {
   text-align: center;
 }
 
-.Description{
+.Description {
   text-align: center;
-
 }
-.card-img-top{
+.card-img-top {
   height: 200px;
-  width: 200px
+  width: 200px;
 }
-.card-img-top2{
+.card-img-top2 {
   height: 200px;
   width: 200px;
   position: right;
 }
-.card{
+.card {
   width: 18rem;
 }
-.card2{
-
+.card2 {
 }
-
-
 
 .App-header {
   background-color: #282c34;
