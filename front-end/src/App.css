@@ -1,17 +1,35 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Welcome{
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Searchbar{
+  text-align: center;
 }
+
+.Description{
+  text-align: center;
+
+}
+.card-img-top{
+  height: 200px;
+  width: 200px
+}
+.card-img-top2{
+  height: 200px;
+  width: 200px;
+  position: right;
+}
+.card{
+  width: 18rem;
+}
+.card2{
+
+}
+
+
 
 .App-header {
   background-color: #282c34;
