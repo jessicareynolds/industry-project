@@ -91,6 +91,7 @@ function Home() {
           tournaments
         </p>
 
+<<<<<<< HEAD
         <Form className="Searchbar" inline>
           <FormControl
             type="text"
@@ -100,6 +101,25 @@ function Home() {
           <Button variant="outline-success">Search</Button>
         </Form>
       </Jumbotron>
+=======
+  </p>
+  <p>
+  <Form className="Searchbar" inline>
+      <FormControl type="text" placeholder="Search by Product" className="mr-sm-2" />
+      <Button  variant="outline-success">Search</Button>
+    </Form>
+  </p>
+</Jumbotron>
+  
+  <Jumbotron>
+  <h1 className="Welcome"> Categories</h1>
+   </Jumbotron>
+   
+<p class="card" >
+  <img src ="https://tcimages.imfast.io/ACX/ACX.12OZWT.Stainless.A1.jpg" class="card-img-top" alt="new"></img>
+  </p>
+    <a href="http://localhost:5000/products" class="btn btn-primary">Golf Accessories</a>
+>>>>>>> 0f7c1b896dc04d10c7de7367524b9d3ec553de29
 
       <Jumbotron>
         <h1 className="Welcome"> Categories</h1>
