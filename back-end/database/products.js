@@ -6,7 +6,7 @@ var getUserName = require('git-user-name');
 console.log(getUserName());
 
 
-// a "collection" in mongo is a lot like a list which is a lot like an Array
+
 const collectionName = 'products';
 
 async function createProduct(product) {
@@ -45,7 +45,7 @@ async function updateProduct(id, product) {
   );
 }
 
-// export the functions that can be used by the main app code
+
 module.exports = {
   createProduct,
   getProducts,
