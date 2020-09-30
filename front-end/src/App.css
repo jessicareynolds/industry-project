@@ -6,11 +6,16 @@
 }
 
 #main-nav {
-  background-color: #110a40;
+  background-color: #31bfcf;
+  color: #ffffff;
 }
 
 .nav-link {
   color: #ffffff;
+}
+
+.navbar-toggler {
+  color: #81d1dd;
 }
 
 .Searchbar {
@@ -46,13 +51,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
